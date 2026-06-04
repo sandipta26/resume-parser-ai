@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Parser AI</title>
+  <meta name="description" content="Resume Parser AI helps HR teams extract, organize, and review candidate details faster with an interactive resume analysis demo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.7.2/mammoth.browser.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="backdrop backdrop-one"></div>
+  <div class="backdrop backdrop-two"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">AI</span>
+      <div>
+        <p class="brand-kicker">Resume Parser</p>
+        <h1>Resume Parser AI</h1>
+      </div>
+    </div>
+    <a class="ghost-link" href="#demo">Try demo</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Smart hiring workflow</p>
+        <h2>Extract candidate details, structure the data, and move faster from resume to shortlist.</h2>
+        <p class="lead">
+          Resume Parser AI is a modern website concept for HR teams and recruiters. It turns messy resumes into clean,
+          organized information so you can review skills, education, and experience in seconds.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#demo">Launch parser</a>
+          <a class="secondary-button" href="#features">See features</a>
+        </div>
+        <div class="metrics">
+          <article>
+            <strong>3x</strong>
+            <span>faster resume screening</span>
+          </article>
+          <article>
+            <strong>1 click</strong>
+            <span>to structure data</span>
+          </article>
+          <article>
+            <strong>HR ready</strong>
+            <span>for modern hiring teams</span>
+          </article>
+        </div>
+      </div>
+
+      <aside class="hero-panel reveal">
+        <div class="panel-header">
+          <span class="status-dot"></span>
+          Live parsing preview
+        </div>
+        <div class="preview-card">
+          <p class="preview-label">Candidate</p>
+          <h3 id="heroCandidateName">Awaiting upload</h3>
+          <p class="preview-text">Software Engineer | 5 years experience</p>
+          <div class="chip-row">
+            <span>Python</span>
+            <span>React</span>
+            <span>FastAPI</span>
+            <span>SQL</span>
+          </div>
+        </div>
+        <div class="insight-grid">
+          <div>
+            <span>Match score</span>
+            <strong>92%</strong>
+          </div>
+          <div>
+            <span>Education</span>
+            <strong>MCA</strong>
+          </div>
+          <div>
+            <span>Location</span>
+            <strong>Bengaluru</strong>
+          </div>
+          <div>
+            <span>Status</span>
+            <strong>Reviewed</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="content-grid" id="features">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Why it matters</p>
+        <h2>Designed for teams that need speed without losing structure.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <span class="feature-icon">01</span>
+          <h3>Smart extraction</h3>
+          <p>Pull out names, contact details, skills, education, and experience into clean fields.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-icon">02</span>
+          <h3>Candidate summary</h3>
+          <p>Generate a quick readable profile so recruiters can scan a candidate in moments.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span class="feature-icon">03</span>
+          <h3>Better shortlisting</h3>
+          <p>Compare candidates with consistent data instead of reading every resume manually.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="workflow reveal">
+      <div>
+        <p class="eyebrow">How it works</p>
+        <h2>A simple workflow from upload to insight.</h2>
+      </div>
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Upload resume</h3>
+          <p>Drop a resume file or paste the content into the analyzer.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Parse details</h3>
+          <p>The system scans text and groups the most important candidate information.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Review results</h3>
+          <p>See skills, contact info, education, and a short AI-style summary instantly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="demo-copy reveal">
+        <p class="eyebrow">Interactive demo</p>
+        <h2>Paste resume text or upload a file to see structured output.</h2>
+        <p>
+          This demo uses browser-side parsing for text resumes, so you can test the experience right away without a backend.
+        </p>
+        <div class="upload-box">
+          <label for="resumeFile">Upload resume file</label>
+          <input id="resumeFile" type="file" accept=".txt,.md,.json,.docx" />
+          <small>For best results, use a plain text resume file. DOCX resumes are supported in-browser; PDF support can be added later with a backend.</small>
+        </div>
+      </div>
+
+      <div class="demo-panel reveal">
+        <form id="resumeForm" class="parser-form">
+          <label for="resumeText">Resume text</label>
+          <textarea id="resumeText" rows="14" placeholder="Paste a resume here..."></textarea>
+          <button type="submit" class="primary-button">Analyze resume</button>
+        </form>
+
+        <div class="result-card">
+          <div class="result-header">
+            <div>
+              <p class="preview-label">Parsed result</p>
+              <h3 id="candidateName">Awaiting input</h3>
+            </div>
+            <span class="result-badge" id="confidenceBadge">0% confidence</span>
+          </div>
+
+          <div class="result-list">
+            <div><span>Email</span><strong id="candidateEmail">Not detected</strong></div>
+            <div><span>Phone</span><strong id="candidatePhone">Not detected</strong></div>
+            <div><span>Education</span><strong id="candidateEducation">Not detected</strong></div>
+            <div><span>Skills</span><strong id="candidateSkills">Not detected</strong></div>
+            <div><span>Experience</span><strong id="candidateExperience">Not detected</strong></div>
+            <div><span>Keywords</span><strong id="candidateKeywords">Not detected</strong></div>
+          </div>
+
+          <div class="summary-box">
+            <p>AI summary</p>
+            <span id="candidateSummary">Paste or upload a resume to generate a structured summary.</span>
+          </div>
+
+          <div class="summary-box ats-box">
+            <p>ATS snapshot</p>
+            <span id="candidateAts">ATS score will appear here after analysis.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Resume Parser AI website concept for hiring teams, recruiters, and candidate screening workflows.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
